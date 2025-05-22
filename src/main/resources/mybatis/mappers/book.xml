@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "_//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aidd.demo.mapper.BookMapper">
+	<select id="findAll" resultType="com.aidd.demo.dto.BookDetailResponse">
+	SELECT book_id AS bookId, title, author FROM book ORDER BY book_id
+	</select>
+	<select id="findById" resultType="com.aidd.demo.domain.Book">
+	SELECT book_id AS bookId, title, author, publisher, release_date AS releaseDate, isbn FROM book 
+	WHERE book_id = #{bookId}
+	</select>
+	<insert id="save" parameterType="com.aidd.demo.domain.Book">
+	INSERT INTO book(book_id, title, author, publisher, release_date, isbn)
+		VALUES(#{bookId},#{title},#{author},#{publisher},#{releaseDate},#{isbn})
+	</insert>
+	<update id="update" parameterType="com.aidd.demo.domain.Book">
+	UPDATE book SET title=#{title}, author=#{author}, publisher=#{publisher}, release_date=#{releaseDate}, isbn=#{isbn} 
+	WHERE book_id = #{bookId}
+	</update>
+	<delete id="delete">
+	DELETE FROM book 
+	WHERE book_id = #{bookId}
+	</delete>
+</mapper>
