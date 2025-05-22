@@ -59,3 +59,8 @@ cd spring-boot-demo
 ```bash
 http://localhost:8080
 ```
+
+<br>
+
+## 참고
+https://yellow.kr/blog/spring-boot-mybatis-hsqldb/
