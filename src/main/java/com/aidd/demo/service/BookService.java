@@ -17,8 +17,12 @@ public class BookService {
 		this.bookMapper = bookMapper;
 	}
 	
-	public List<BookDetailResponse> getAllBooks() {
+	public List<Book> getAllBooks() {
 		return bookMapper.findAll();
+	}
+	
+	public List<BookDetailResponse> getAllBooksForapi() {
+		return bookMapper.findAllForApi();
 	}
 	
 	public Book getBookById(String bookId) {

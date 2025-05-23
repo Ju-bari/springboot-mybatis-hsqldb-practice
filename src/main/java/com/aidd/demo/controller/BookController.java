@@ -29,7 +29,7 @@ public class BookController {
 	
 	@GetMapping("/listBook")
 	public String viewBookList(Model model) {
-		List<BookDetailResponse> books = bookService.getAllBooks();
+		List<Book> books = bookService.getAllBooks();
 		model.addAttribute("allBooks", books);
 		
 		return "listBook";

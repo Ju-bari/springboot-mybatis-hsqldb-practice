@@ -10,7 +10,9 @@ import com.aidd.demo.dto.BookDetailResponse;
 @Mapper
 public interface BookMapper {
 	
-	public List<BookDetailResponse> findAll();
+	public List<Book> findAll();
+	
+	public List<BookDetailResponse> findAllForApi();
 	
 	public Book findById(String bookId);
 	
